@@ -13,7 +13,7 @@
       </div>
       <div id="navbarMenu" class="navbar-menu">
         <div class="navbar-end">
-          <a class="navbar-item" href="/donate"> Donate </a>
+          <a class="navbar-item" href="/dashboard"> Dashboard </a>
           <a class="navbar-item" href="/report"> Report </a>
           <a class="navbar-item" href="/logout"> Logout [{$currentSession.name}]</a>
         </div>

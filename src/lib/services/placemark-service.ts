@@ -7,7 +7,7 @@ export const placemarkService = {
   async signup(user: User): Promise<boolean> {
     try {
       const response = await axios.post(`${this.baseUrl}/api/users`, user);
-      return response.data.success === true;
+      return response.status == 201;
     } catch (error) {
       console.log(error);
       return false;

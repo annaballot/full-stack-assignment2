@@ -3,6 +3,7 @@
     import UserCredentials from "$lib/ui/UserCredentials.svelte";
     import UserDetails from "$lib/ui/UserDetails.svelte";
     import Message from "$lib/ui/Message.svelte";
+    import { placemarkService } from "$lib/services/placemark-service";
   
     let firstName = "";
     let lastName = "";
@@ -11,13 +12,22 @@
     let message = "";
   
     async function signup() {
-      const success = false;
-      if (success) {
-        goto("/dashboard");
-      } else {
-        message = "Error Trying to sign up";
-      }
+    let success = false;
+    console.log(`attemting to sign up email: ${email}`);
+    let user = {
+      firstName: firstName,
+      lastName: lastName,
+      email: email,
+      password: password,
+    };
+    console.log(user)
+    success = await placemarkService.signup(user);
+    if (success) {
+      goto("/login");
+    } else {
+      message = "Error Trying to sign up";
     }
+  }
   </script>
   
   {#if message}
