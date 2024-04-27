@@ -1,6 +1,12 @@
 <script lang="ts">
+  import Card from "$lib/ui/Card.svelte";
+  import { subTitle } from "$lib/stores";
+  import CreatePlacemarkForm from "./CreatePlacemarkForm.svelte";
+
+  subTitle.set("Dashboard");
 </script>
 
-<p>
-  This is the dashboard
-</p>
+<Card title="Create a Placemark">
+  <CreatePlacemarkForm />
+</Card>
+
