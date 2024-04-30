@@ -1,54 +1,85 @@
 <script lang="ts">
-    export let donations = [
-      {
-        amount: 40,
-        method: "paypal",
-        donor: "bart@simpson.com",
-        candidate: { lastName: "Simpson", firstName: "Lisa" },
-        lat: "52.161290",
-        lng: "-7.51540"
-      },
-      {
-        amount: 90,
-        method: "direct",
-        donor: "marge@simpson.com",
-        candidate: { lastName: "Simpson", firstName: "maggie" },
-        lat: "52.261290",
-        lng: "-7.231540"
-      },
-      {
-        amount: 430,
-        method: "paypal",
-        donor: "homer@simpson.com",
-        candidate: { lastName: "Flanders", firstName: "Ned" },
-        lat: "52.361290",
-        lng: "-7.241540"
-      }
-    ];
+    // export let placemarks = [
+    //   {
+    //     name: "Clonea",
+    //     category: "Beach",
+    //     description: "lovely",
+    //     latitude: "52.161290",
+    //     longitude: "-7.51540"
+    //   },
+    //   {
+    //     name: "Kilmurrin",
+    //     category: "Surf Spot",
+    //     description: "waves",
+    //     latitude: "5.161290",
+    //     longitude: "7.51540"
+    //   },
+    //   {
+    //     name: "Lahinch",
+    //     category: "Diving Board",
+    //     description: "deep",
+    //     latitude: "2.161290",
+    //     longitude: "-1.51540"
+    //   }
+    // ];
+
+  import type { Placemark } from "$lib/types/placemark-types";
+
+  export let placemarks: Placemark[];
+
   </script>
   
   <table class="table is-fullwidth">
     <thead>
-      <th>Amount</th>
-      <th>Method</th>
-      <th>Candidate</th>
-      <th>Donor</th>
+      <th>Name</th>
+      <th>Category</th>
+      <th>Description</th>
+      <th>Latitude</th>
+      <th>Longitude</th>
     </thead>
     <tbody>
-      {#each donations as donation}
+      {#each placemarks as placemark}
         <tr>
           <td>
-            {donation.amount}
+            {placemark.name}
           </td>
           <td>
-            {donation.method}
-          </td><td>
-            {donation.candidate.lastName}, {donation.candidate.firstName}
+            {placemark.category}
           </td>
           <td>
-            {donation.donor}
+            {placemark.description}
+          </td>
+          <td>
+            {placemark.latitude}
+          </td>
+          <td>
+            {placemark.longitude}
           </td>
         </tr>
       {/each}
     </tbody>
   </table>
+
+
+
+  <!-- <tbody>
+    {#each placemarks as placemark}
+      <tr>
+        <td>
+          {placemark.name}
+        </td>
+        <td>
+          {placemark.category}
+        </td>
+        <td>
+          {placemark.description}
+        </td>
+        <td>
+          {placemark.latitude}
+        </td>
+        <td>
+          {placemark.longitude}
+        </td>
+      </tr>
+    {/each}
+  </tbody> -->

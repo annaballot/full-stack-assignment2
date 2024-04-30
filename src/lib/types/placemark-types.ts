@@ -11,3 +11,13 @@ export interface Session {
     password: string;
     _id?: string;
   }
+
+  export interface Placemark {
+    name: string;
+    category: string;
+    description: string;
+    latitude: number;
+    longitude: number;
+    rating: number;
+    img: string;
+  } 

@@ -1,8 +1,9 @@
 import axios from "axios";
-import type { Session, User } from "$lib/types/placemark-types";
+import type { Session, User, Placemark } from "$lib/types/placemark-types";
+
 
 export const placemarkService = {
-  baseUrl: "http://annas_laptop:3000",
+  baseUrl: "http://localhost:8010/proxy",
 
   async signup(user: User): Promise<boolean> {
     try {
@@ -31,5 +32,29 @@ export const placemarkService = {
       console.log(error);
       return null;
     }
+  },
+
+
+async getPlacemarks(session: Session): Promise<Placemark[]> {
+  try {
+    axios.defaults.headers.common["Authorization"] = session.token;
+    const response = await axios.get(this.baseUrl + "/api/placemarks");
+    console.log(session.token);
+    return response.data;
+  } catch (error) {
+    return [];
   }
+} ,
+
+async createPlacemark(placemark: Placemark, session: Session) {
+  try {
+    axios.defaults.headers.common["Authorization"] = session.token;
+    const response = await axios.post(this.baseUrl + "/api/placemarks", placemark);
+    console.log(session.token);
+    return response.status == 201;
+  } catch (error) {
+    return false;
+  }
+},
+
 };

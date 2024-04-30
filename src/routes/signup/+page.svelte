@@ -3,7 +3,6 @@
   </script>
   
   <section class="hero is-fullheight is-default is-bold">
-    <div class="hero-head"></div>
     <div class="hero-body">
       <div class="container">
         <div class="columns is-vcentered">
