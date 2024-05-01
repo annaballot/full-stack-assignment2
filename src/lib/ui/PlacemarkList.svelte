@@ -36,6 +36,7 @@
       <th>Description</th>
       <th>Latitude</th>
       <th>Longitude</th>
+      <th>Rating</th>
     </thead>
     <tbody>
       {#each placemarks as placemark}
@@ -54,6 +55,9 @@
           </td>
           <td>
             {placemark.longitude}
+          </td>
+          <td>
+            {placemark.rating}
           </td>
         </tr>
       {/each}

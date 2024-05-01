@@ -3,7 +3,9 @@ import type { Session, User, Placemark } from "$lib/types/placemark-types";
 
 
 export const placemarkService = {
-  baseUrl: "http://localhost:8010/proxy",
+  // baseUrl: "http://localhost:8010/proxy",
+
+  baseUrl: "https://glowing-fire-dolomite.glitch.me",
 
   async signup(user: User): Promise<boolean> {
     try {

@@ -20,10 +20,6 @@
 
 </script>
 
-<Card title="Placemarks">
-  <PlacemarkList {placemarks}/>
-</Card>
-
 <Card title="Create a Placemark">
   <CreatePlacemarkForm />
 </Card>

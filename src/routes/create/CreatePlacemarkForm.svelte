@@ -87,6 +87,10 @@
   </div>
   <Coordinates bind:latitude bind:longitude />
   <div class="field">
+    <label class="label" for="rating">Give this Placemark a Rating:</label>
+    <input bind:value={rating} class="input" id="rating" name="rating" type="integer" />
+  </div>
+  <div class="field">
     <div class="control">
       <button class="button is-success is-fullwidth">Create Placemark</button>
     </div>
